@@ -1,0 +1,79 @@
+# Nams your project! Project names should contain only lowercase characters
+# and underscores. A good package name should reflect your organization's
+# name or the intended use of these models
+name: "astrafy_data_mesh_dp_b"
+version: "1.0.0"
+
+
+# This setting configures which "profile" dbt uses for this project.
+profile: "astrafy"
+
+# These configurations specify where dbt should look for different types of files.
+# The `source-paths` config, for example, states that models in this project can be
+# found in the "models/" directory. You probably won't need to change these!
+model-paths: ["models"]
+analysis-paths: ["analysis"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+docs-paths: ["docs"]
+
+target-path: "target" # directory which will store compiled SQL files
+clean-targets: # folders to be removed by `dbt clean`
+  - "target"
+  - "dbt_packages"
+  - "logs"
+
+require-dbt-version: [">=1.5.0", "<2.0.0"]
+
+query-comment:
+  comment: "{{ query_comment(node) }}"
+  job-label: True
+
+quoting:
+  database: true
+  schema: true
+  identifier: true
+
+vars:
+  'dbt_date:time_zone': "Europe/Paris"
+
+models:
+  +tags: astrafy_data_mesh_dp_b
+  astrafy_data_mesh_dp_b:
+    jaffle_shop_finance:
+      +tags:
+        - jaffle_shop_finance
+      staging:
+        +persist_docs:
+          relation: true
+          columns: true
+        +materialized: table
+      datamart:
+        +materialized: table
+
+  dbt_artifacts:
+    +enabled: true
+
+  elementary:
+    +enabled: true
+
+  dbt_project_evaluator:
+    +enabled: true
+
+
+seeds:
+  +tags: astrafy_data_mesh_dp_b
+  +docs:
+    node_color: "#138D75"
+  astrafy_data_mesh_dp_b:
+    +persist_docs:
+      relation: true
+      columns: true
+    jaffle_shop_finance:
+      +tags: jaffle_shop_finance
+
+tests:
+  +tags: astrafy_data_mesh_dp_b
+  +store_failures: true
