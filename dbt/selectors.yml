@@ -34,3 +34,12 @@ selectors:
       - exclude:
          - method: tag
            value: unit-test
+
+- name: root_project_only
+  description: >
+    Only resources from the root project.
+    Excludes resources defined in installed packages.
+  default: true
+  definition:
+    method: package
+    value: astrafy_data_mesh_dp_b

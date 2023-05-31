@@ -7,6 +7,7 @@
     {# Packages helpers variables #}
     {% set is_project_evaluator = ('dbt_project_evaluator' in node.fqn) %}
     {% set is_elementary =     ('elementary' in node.fqn[0])  %}
+    {% set is_dbt_artifact =     ('dbt_artifacts' in node.fqn[0])  %}
     {% set is_metrics =     ('metrics' in node.fqn[0])  %}
     {% set is_monitoring        = (is_elementary or is_dbt_artifact or is_project_evaluator or is_metrics) %}
 
@@ -46,6 +47,7 @@
       {%- elif is_project_evaluator -%}     {{- env_var('GCP_PROJECT') -}}
       {%- elif is_elementary -%}            {{- env_var('GCP_PROJECT') -}}
       {%- elif is_metrics -%}               {{- env_var('GCP_PROJECT') -}}
+      {%- elif is_dbt_artifact -%}          {{- env_var('GCP_PROJECT') -}}
 
       {%- else -%}
           {{ exceptions.raise_compiler_error(error_unresolve_message) }}
@@ -64,6 +66,7 @@
       {%- elif is_project_evaluator -%}     {{- env_var('GCP_PROJECT') -}}
       {%- elif is_elementary -%}            {{- env_var('GCP_PROJECT') -}}
       {%- elif is_metrics -%}               {{- env_var('GCP_PROJECT') -}}
+      {%- elif is_dbt_artifact -%}          {{- env_var('GCP_PROJECT') -}}
 
       {%- else -%}
           {{ exceptions.raise_compiler_error(error_unresolve_message) }}
