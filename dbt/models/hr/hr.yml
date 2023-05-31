@@ -1,0 +1,8 @@
+version: 2
+
+groups:
+  - name: hr
+    owner:
+        name: HR Department Beware!
+        email: hr@gonnafindyou.com
+

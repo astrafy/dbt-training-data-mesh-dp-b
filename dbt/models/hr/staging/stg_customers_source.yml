@@ -2,6 +2,8 @@ version: 2
 
 models:
   - name: stg_customers_source
+    group: hr
+    access: private
     columns:
       - name: customer_id
         description: Id of the customer

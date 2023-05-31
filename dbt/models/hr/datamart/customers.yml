@@ -2,6 +2,8 @@ version: 2
 
 models:
   - name: customers
+    group: hr
+    access: public
     columns:
       - name: customer_id
         description: Id of the customer
