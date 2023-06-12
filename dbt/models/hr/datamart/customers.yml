@@ -8,7 +8,6 @@ models:
     versions:
       - v: 1
         config:
-#          alias: customers
           contract:
             enforced: true
         columns:

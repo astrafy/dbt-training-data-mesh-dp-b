@@ -3,6 +3,10 @@ version: 2
 groups:
   - name: hr
     owner:
-        name: HR Department Beware!
-        email: hr@gonnafindyou.com
+      name: HR Department Beware!
+      email: hr@gonnafindyou.com
+  - name: supplychain
+    owner:
+      name: SC rocks my socks
+      email: sc@gonnadeliver.com
 
