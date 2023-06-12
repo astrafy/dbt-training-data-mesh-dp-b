@@ -43,9 +43,9 @@ vars:
 models:
   +tags: astrafy_data_mesh_dp_b
   astrafy_data_mesh_dp_b:
-    jaffle_shop_finance:
+    hr:
       +tags:
-        - jaffle_shop_finance
+        - hr
       staging:
         +persist_docs:
           relation: true
@@ -72,8 +72,8 @@ seeds:
     +persist_docs:
       relation: true
       columns: true
-    jaffle_shop_finance:
-      +tags: jaffle_shop_finance
+    hr:
+      +tags: hr
 
 tests:
   +tags: astrafy_data_mesh_dp_b
