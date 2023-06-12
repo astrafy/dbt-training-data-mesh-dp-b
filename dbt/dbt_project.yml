@@ -39,6 +39,7 @@ quoting:
 vars:
   'dbt_date:time_zone': "Europe/Paris"
 
+
 models:
   +tags: astrafy_data_mesh_dp_b
   astrafy_data_mesh_dp_b:
