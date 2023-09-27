@@ -3,7 +3,7 @@ version: 2
 models:
   - name: customers
     group: hr
-    access: private
+    access: public
     latest_version: 1
     versions:
       - v: 1
