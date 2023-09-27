@@ -6,7 +6,7 @@ selectors:
   definition:
     union:
       - method: path
-        value: models/jaffle_shop/staging
+        value: models/hr/staging
 
 - name: intermediate
   description: >
@@ -14,7 +14,7 @@ selectors:
   definition:
     union:
       - method: path
-        value: models/jaffle_shop/intermediate
+        value: models/hr/intermediate
 
 - name: dm
   description: >
@@ -22,7 +22,7 @@ selectors:
   definition:
     union:
       - method: path
-        value: models/jaffle_shop/datamart
+        value: models/hr/datamart
 
 - name: all_generic_test
   description: >
@@ -30,7 +30,7 @@ selectors:
   definition:
     union:
       - method: tag
-        value: jaffle_shop
+        value: hr
       - exclude:
          - method: tag
            value: unit-test
